@@ -12,36 +12,6 @@ func init() {
 }
 
 func main() {
-
-	// var mybyte byte
-	// mybyte = 0011
-	// fmt.Println("mybyte:", mybyte)
-
-	// fmt.Println("Hello, World!")
-	// fmt.Println("Start:", time.Now().UnixNano())
-	// fmt.Println("Start:", time.Now().UnixMilli())
-
-	// for start := time.Now().UnixNano(); time.Now().UnixNano()-start <= 1000000; {
-	// 	counter++
-	// }
-
-	// fmt.Println("End:  ", time.Now().UnixNano())
-	// fmt.Println("End:  ", time.Now().UnixMilli())
-	// fmt.Println(counter)
-	// counter = 0
-
-	// go incrementCounter()
-
-	// fmt.Println("Keep generating counter with 1 second interval")
-	// time.Sleep(1 * time.Second)
-	// fmt.Println(counter)
-	// time.Sleep(1 * time.Second)
-	// fmt.Println(counter)
-	// time.Sleep(1 * time.Second)
-	// fmt.Println(counter)
-
-	// fmt.Println("DateTime:", time.Unix(1288834974, 657))
-	// fmt.Println("diff:", time.Now().UnixMilli()-time.Unix(1288834974, 657).UnixMilli())
 	go resetCounter()
 	var id int64
 	start := time.Now()
