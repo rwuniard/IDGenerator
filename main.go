@@ -86,12 +86,6 @@ func GenerateID(dataCenterId int, machineId int) int64 {
 
 // This function will reset the counter to 0 every 1 millisecond.
 func resetCounter() {
-	// for {
-	// 	for start := time.Now().UnixNano(); time.Now().UnixNano()-start <= 1000000; {
-	// 		//
-	// 	}
-	// 	counter = 0
-	// }
 	for {
 		time.Sleep(1 * time.Millisecond)
 		counter = 0
