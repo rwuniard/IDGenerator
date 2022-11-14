@@ -7,10 +7,6 @@ import (
 
 func TestGenerateID(t *testing.T) {
 	counter = 0
-	resetCount = 0
-	prevId = 0
-	prevTime = 0
-	prevCounter = 0
 	go resetCounter()
 	var id int64
 	ids := make(map[int64]int64, 0)
@@ -28,8 +24,6 @@ func TestGenerateID(t *testing.T) {
 		if dataCenterId != 1 {
 			t.Errorf("dataCenterId is not 1, it is %d", dataCenterId)
 		}
-		// time.Sleep(900000 * time.Nanosecond)
-		// time.Sleep(1 * time.Millisecond)
 	}
 	if len(ids) != numberLoop {
 		fmt.Println("len(ids):", len(ids))
@@ -38,5 +32,4 @@ func TestGenerateID(t *testing.T) {
 		t.Errorf("There are duplicate ids")
 	}
 	fmt.Println("id:    ", id)
-	fmt.Println("resetCount:", resetCount)
 }
