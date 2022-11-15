@@ -1,7 +1,7 @@
 package algorithms
 
 import (
-	"fmt"
+	"log"
 	"runtime"
 	"sync/atomic"
 	"time"
@@ -40,10 +40,12 @@ func GenerateID(dataCenterId int, machineId int) int64 {
 
 	// 7. Add the sequence
 	atomic.AddInt32(&counter, 1)
+	// If the cpu is too fast and it count up to 4095 already
+	// sleep for 0.1 millisecond, so the counter will reset to 0 for the next id.
+	// The counter is only 12 bits, so it can only count up to 4095.
 	if counter >= 4095 {
-		fmt.Println("counter:", counter)
+		log.Println("counter:", counter)
 		time.Sleep(100000 * time.Nanosecond)
-
 	}
 	id = id | int64(counter)
 
