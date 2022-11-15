@@ -17,6 +17,10 @@ func init() {
 // 1 bit for sign, 41 bits for timestamp, 5 bits for data center, 5 bits for machine, 12 bits for sequence.
 // The problem right now is that it can generate more than 4096 IDs per millisecond.
 func GenerateID(dataCenterId int, machineId int) int64 {
+	if (dataCenterId > 31) || (machineId > 31) {
+		log.Println("Data center ID and machine ID must be between 0 and 31")
+		return -1
+	}
 	// 1 bit for sign, 41 bits for timestamp, 5 bits for data center, 5 bits for machine, 12 bits for sequence.
 	// 1. Calculate the data center id.
 	dataCenterBitValue := dataCenterId << (12 + 5)
