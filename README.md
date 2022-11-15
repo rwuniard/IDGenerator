@@ -6,6 +6,11 @@ You can run with this on the command line after the dependencies are setup.<br/>
 It will re-compile/run it if there is any code changes.<br/>
 CompileDaemon -command="./go_rest_gin"<br/>
 <br/>
+Send GET request through web browser or Postman with body message<br/>
+{
+    "DataCenterId": 9,
+    "MachineId": 2
+}
 ## Setting up the dependencies
 Watches your go files in a directory and invokes go build if file changed.<br/>  
 Github location:<br/>
