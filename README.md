@@ -44,3 +44,9 @@ go get github.com/joho/godotenv<br/>
 <br/>
 Dependency will be added to your go.mod.<br/>
 <br/>
+
+### To build docker image
+docker build -t idgenerator .
+
+### To run docker image
+docker run -p 3000:3000 idgenerator
